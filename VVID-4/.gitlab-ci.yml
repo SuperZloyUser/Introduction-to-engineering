@@ -1,0 +1,30 @@
+stages:
+- build
+- documentation
+job:
+    stage: build
+    script:
+    - echo "start test building"
+    - cd "Qt"
+    - cd "VVID-4"
+    - cd "Tests"
+    - qmake Tests.pro
+    - mingw32-make
+    - echo "end test building"
+    - release\Tests.exe
+    - cd ..
+    - echo "start building"
+    - qmake VVID-4.pro
+    - mingw32-make
+    - echo "end building"
+    artifacts:
+        paths:
+        - QT\VVID-4\release\VVID-4.exe
+pages:
+    stage: documentation
+    script:
+      - doxygen
+    artifacts:
+      paths:
+      - public
+    

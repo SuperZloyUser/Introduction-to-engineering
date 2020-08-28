@@ -1,0 +1,4 @@
+[fetch]
+	recurseSubmodules = false
+[http "https://gitlab.com"]
+	sslCAInfo = A:\\progi\\VVID-4\\Qt\\VVID-4\\_DGH2zGx\\0\\SuperZloyUser\\vvid-4.tmp\\CI_SERVER_TLS_CA_FILE
